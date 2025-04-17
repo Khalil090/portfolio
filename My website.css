@@ -35,11 +35,8 @@ header{
 }
 
 @keyframes typing {
-  0% { width: 0; }
-  50% { width: 70%; }
-  80% { width: 0%; }
-  40% { width: 70%; }
-  80% { width: 0; } /* Zurücksetzen für Wiederholung */
+from { width: 0;}
+to { width: 100;}
 }
 
 @keyframes blink {
