@@ -51,7 +51,7 @@ header{
   border-right: 3px solid black; /* Cursor */
   display: inline-block;
   width: 0;
-  animation: typing 8s steps(27) infinite, blink 0.3s infinite;
+  animation: typing 5s steps(27) infinite, blink 0.1s infinite;
   animation-delay: 0s, 10s;
   animation-iteration-count: infinite;
 }
