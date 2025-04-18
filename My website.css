@@ -34,6 +34,7 @@ header{
     overflow-x: hidden;
 }
     .rocket{
+        margin-left: 50px;
     max-width: 100%;
   display: flex;
   background-color: #7aabdd;
