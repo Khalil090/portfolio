@@ -43,7 +43,6 @@ header{
 }
     .rocket{
         width: 100%;
-        max-width: 100%;
         height: auto;
   background-color: #7aabdd;
   border-radius: 50%;
@@ -53,11 +52,7 @@ header{
     max-width: 100%
         padding: 1rem;
 }
-  .png img{
-      width: 100px;
-      max-width: 200px;
-      height: auto;   
-      }
+ 
     
 @keyframes typing {
   from { width: 0; }
