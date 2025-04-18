@@ -57,6 +57,8 @@ header{
         grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* 2 Spalten */
         padding: 1rem;
         gap: 1rem;
+     max-width: 960px;
+     margin: 0 auto;
 
     }
     .grid-container img {
