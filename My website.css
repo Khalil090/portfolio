@@ -41,7 +41,8 @@ header{
     max-width: 100%
         padding: 1rem;
 }
-  .png{
+  .hi{
+      display: flex;
           max-width: 100%;
         margin-bottom: 15px;
         margin-left: 20px;
