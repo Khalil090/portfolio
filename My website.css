@@ -38,14 +38,14 @@ header{
     flex-wrap: wrap;
 }
 .snowman{
-    width: 300px;
+    width: 150px;
     height: auto;
 }
     .rocket{
         width: 100px;
         height: auto;
   background-color: #7aabdd;
-  border-radius: 20%;
+  border-radius: 50%;
 }
 .hero-text
 {
