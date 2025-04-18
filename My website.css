@@ -54,7 +54,7 @@ header{
 }
  .grid-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(10px, 1fr)); /* 2 Spalten */
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* 2 Spalten */
         padding: 1rem;
         gap: 1rem;
 
