@@ -24,10 +24,7 @@ header{
 }
 
 .hero{
-    display: flex;
-   position: relative;
     background-position: center;
-    text-align: center;
     max-width: 100%;
     margin: 0 auto;
     padding: 1rem;
