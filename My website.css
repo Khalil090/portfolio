@@ -42,12 +42,9 @@ header{
         padding: 1rem;
 }
   .png img{
-      width: 150px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-      padding-bottom; 1rem;
-         
+      width: 30vm;
+      max-width: 200px;
+      height: auto;   
       }
     
 @keyframes typing {
