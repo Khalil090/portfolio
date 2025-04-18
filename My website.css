@@ -37,8 +37,13 @@ header{
     gap: 1.5rem;
     flex-wrap: wrap;
 }
+.snowman{
+    width: 100px;
+    height: auto;
+}
     .rocket{
         width: 100%;
+        max-width: 100%;
         height: auto;
   background-color: #7aabdd;
   border-radius: 50%;
