@@ -50,6 +50,12 @@ header{
 .rocket {
   width: 100px;
   height: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Optional: Add hover effect */
+.snowman:hover, .rocket:hover {
+  transform: scale(1.1);
 }
 
 /* Responsive scaling */
