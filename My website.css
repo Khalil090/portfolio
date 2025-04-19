@@ -33,6 +33,19 @@ header{
   padding: 0 20px;
 
 }
+.hero-text
+{
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+.cursor {
+  display: inline-block;
+  max-width: 100%;
+  white-space: normal; /* Let the text wrap */
+  overflow: visible;
+}
+
 .rocket{
   position: relative;
   display: flex;
