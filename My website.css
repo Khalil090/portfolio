@@ -3,6 +3,7 @@ html, body{
   overflow: auto;
 }
 *{
+  box-sizing: border-box;
   margin: 0%;
   font-family: 'Courier New', Courier, monospace;
   font-style: italic;
@@ -24,26 +25,46 @@ header{
 
 .hero{
   display: flex;
- position: relative;
-  justify-content: center;
-  align-content: center;
-  background-position: center;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  margin-bottom: 50px;
-  padding: 0 20px;
-
+  padding: 2rem 1rem;
+  box-sizing: border-box;
 }
 .hero-text
 {
-  width: 100%;
+  max-width: 100%;
   padding: 1rem;
   box-sizing: border-box;
 }
-.cursor {
-  display: inline-block;
-  max-width: 100%;
-  white-space: normal; /* Let the text wrap */
-  overflow: visible;
+.character-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap; /* If space is tight, they stack */
+  margin: 2rem 0;
+}
+
+.hi,
+.rocket {
+  width: 100px;
+  height: auto;
+}
+
+/* Responsive scaling */
+@media (min-width: 768px) {
+  .hi,
+  .rocket {
+    width: 150px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hi,
+  .rocket {
+    width: 200px;
+  }
 }
 
 .rocket{
@@ -56,33 +77,33 @@ header{
   border-radius: 50%;
   }
   .grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    grid-template-columns: repeat(2, auto); /* 2 Spalten */
-    row-gap: 15px;
-    column-gap: 10px;
-
-}
-.grid-container img {
-  display: inline block;
-  filter: grayscale(100%)brightness(70%);
-  transition: filter 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
-    position: relative;
-    justify-content: center;
-    width: 300px;
-    height: 200px;
-    border: 2px solid #ddd;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 70px;
-  }
-  .grid-container img:hover{
-    filter: grayscale(0%)brightness(90%);
-    transform: scale(1.2, 1.2) rotate(10deg) ;
-  
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      grid-template-columns: repeat(2, auto); /* 2 Spalten */
+      row-gap: 15px;
+      column-gap: 10px;
 
   }
+  .grid-container img {
+    display: inline block;
+    filter: grayscale(100%)brightness(70%);
+    transition: filter 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+      position: relative;
+      justify-content: center;
+      width: 300px;
+      height: 200px;
+      border: 2px solid #ddd;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 70px;
+    }
+    .grid-container img:hover{
+      filter: grayscale(0%)brightness(90%);
+      transform: scale(1.2, 1.2) rotate(10deg) ;
+    
+
+    }
 
 @keyframes typing {
 0% { width: 0; }
@@ -130,10 +151,6 @@ animation-iteration-count: infinite;
   transition: 0.2s ease-in-out;
 
 }
-.hey{
-font-size: 1.5rem;
-color: #1a1a1a;
-}
 
 .button:hover{
   background-color: #348ee8;
@@ -141,11 +158,6 @@ color: #1a1a1a;
   height:50px ;
 transform: scale(1.1);}
 
-.hero-text
-{
-  margin-top: 10px;
-  margin-bottom: 15px;
-}
 .socialmedia{
 display: flex;
 justify-content: center;
@@ -164,7 +176,6 @@ margin-top: 20px;
   place-items:center;
 }
  
-
 .socialmedia a svg{
 height: 20px;
 width: 20px;
@@ -266,34 +277,6 @@ list-style: none;
 }
 
 
-.grid-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      grid-template-columns: repeat(2, auto); /* 2 Spalten */
-      row-gap: 15px;
-      column-gap: 10px;
-
-  }
-  .grid-container img {
-    display: inline block;
-    filter: grayscale(100%)brightness(70%);
-    transition: filter 0.3s ease-in-out;
-    transition: transform 0.3s ease-in-out;
-      position: relative;
-      justify-content: center;
-      width: 300px;
-      height: 200px;
-      border: 2px solid #ddd;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-      border-radius: 70px;
-    }
-    .grid-container img:hover{
-      filter: grayscale(0%)brightness(90%);
-      transform: scale(1.2, 1.2) rotate(10deg) ;
-    
-
-    }
 
     .last{
       display: flex;
@@ -306,11 +289,7 @@ list-style: none;
       margin-bottom: 15px;
       margin-left: 20px;
     }
-    body {
-background-color: #001f3f;
-overflow: hidden;
-}
-
+  
 .snow-container {
 position: absolute;
 top: 0;
@@ -414,12 +393,4 @@ width: 200px;
 height: 150px;
 
 }
-.rocket{
-position: relative;
-display: flex;
-width: 250px;
-height: 250px;
-margin-left: 150px;
-background-color: #7aabdd;
-border-radius: 50%;
-}
+
