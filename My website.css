@@ -45,6 +45,12 @@ header{
   flex-wrap: wrap; /* If space is tight, they stack */
   margin: 2rem 0;
 }
+.image-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+}
 
 .hi,
 .rocket {
