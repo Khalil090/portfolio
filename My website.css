@@ -33,6 +33,43 @@ header{
   padding: 0 20px;
 
 }
+.rocket{
+  position: relative;
+  display: flex;
+  width: 250px;
+  height: 250px;
+  margin-left: 150px;
+  background-color: #7aabdd;
+  border-radius: 50%;
+  }
+  .grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-template-columns: repeat(2, auto); /* 2 Spalten */
+    row-gap: 15px;
+    column-gap: 10px;
+
+}
+.grid-container img {
+  display: inline block;
+  filter: grayscale(100%)brightness(70%);
+  transition: filter 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+    position: relative;
+    justify-content: center;
+    width: 300px;
+    height: 200px;
+    border: 2px solid #ddd;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 70px;
+  }
+  .grid-container img:hover{
+    filter: grayscale(0%)brightness(90%);
+    transform: scale(1.2, 1.2) rotate(10deg) ;
+  
+
+  }
 
 @keyframes typing {
 0% { width: 0; }
