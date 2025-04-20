@@ -95,6 +95,18 @@ header{
       row-gap: 15px;
       column-gap: 10px;
 
+  @media (min-width: 768px){
+    .grid-container{
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+  }
+  .grid-container a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 15px;
+    aspect-ratio: 1; /* Perfect square ratio */
   }
   .grid-container img {
     display: inline block;
