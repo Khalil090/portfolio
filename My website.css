@@ -430,7 +430,10 @@ animation-duration: 7s;
 animation-delay: 2s;
 
 }
-
+/* Remove first static snowflake */
+.snowflake:nth-child(1) {
+  display: none;
+}
 .cl{
 display: flex;
 margin-top: 10px;
