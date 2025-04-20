@@ -33,7 +33,7 @@ header{
 }
 .hero-text
 {
-  max-width: 100%;
+  max-width: 80%;
   padding: 1rem;
   box-sizing: border-box;
 }
@@ -52,9 +52,9 @@ header{
   position: relative;
 }
 
-.hi,
-.rocket {
-  width: 100px;
+/* Ensure images have consistent sizing */
+.snowman, .rocket {
+  width: 350px;
   height: auto;
   transition: transform 0.3s ease;
 }
@@ -82,9 +82,8 @@ header{
 .rocket{
   position: relative;
   display: flex;
-  width: 250px;
-  height: 250px;
-  margin-left: 150px;
+  width: 200px;
+  height: auto;
   background-color: #7aabdd;
   border-radius: 50%;
   }
@@ -206,6 +205,7 @@ h2{
 font-size: 2rem;
 }
 .p{
+  max-width: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
