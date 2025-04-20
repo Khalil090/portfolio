@@ -67,7 +67,22 @@ header{
 .snowman:hover, .rocket:hover {
   transform: scale(1.1);
 }
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(5deg);
+  }
+}
 
+.snowman {
+  animation: float 3s ease-in-out infinite;
+  transform-origin: center bottom; /* Rotate from bottom center */
+}
 /* Responsive scaling */
 @media (min-width: 768px) {
   .hi,
