@@ -43,8 +43,10 @@ header{
   align-items: center;
   gap: 2rem;
   flex-wrap: wrap; /* If space is tight, they stack */
-  margin: 2rem 0;
-  pa
+  margin: 2rem auto;
+  max-width: 90vm;
+  position: relative;
+
 }
 .image-container {
   display: flex;
@@ -55,7 +57,8 @@ header{
 
 /* Ensure images have consistent sizing */
 .snowman, .rocket {
-  width: 350px;
+  width: 40vm;
+  max-width: 200px;
   height: auto;
   transition: transform 0.3s ease;
 }
