@@ -72,21 +72,21 @@ header{
 @media (min-width: 768px) {
   .hi,
   .rocket {
-    width: 150px;
+    width: 100%;
   }
 }
 
 @media (min-width: 1024px) {
   .hi,
   .rocket {
-    width: 200px;
+    width: 250px;
   }
 }
 
 .rocket{
   position: relative;
   display: flex;
-  width: 200px;
+  width: 50vm;
   height: auto;
   background-color: #7aabdd;
   border-radius: 50%;
