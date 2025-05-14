@@ -1,6 +1,7 @@
 
 html, body{
   overflow: auto;
+  padding: 5px;
 }
 *{
   box-sizing: border-box;
@@ -10,8 +11,7 @@ html, body{
 }
 body {
   font-family: Arial, sans-serif;
-  margin: 3px;
-  padding: 0;
+  padding: 5;
   background-color: #f4fdff;
   background-size: 3px 3px;
   filter: contrast(130%);
@@ -25,27 +25,34 @@ header{
 }
 
 .hero{
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
-  text-align: center;
-  text-align: center;
-  padding: 2rem 1rem;
   box-sizing: border-box;
+  padding: 10px;
+  overflow: hidden;
 }
 .hero-text
 {
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
-  width: 60%;
-  max-width: 400vm;
-  max-height: 150vh;
+  width: 50%;
   text-align: center ;
-}
+  padding: 15px;
+  border-radius: 35px;
+  align-self: right;
+  margin-left: -40px;
+  }
 .ss{
   display: flex;
   position: absolute;
-  background-color: #1987fc;
+  border: #2b79c8 2px solid;
+  background-color: #2b79c8;
+  opacity: 1;
+  filter: blur(1px);
+  box-shadow: #4df9d3 0px 0px 10px;
   border-radius: 20px;
   width: 25vw;
   height: 25vh;
@@ -78,7 +85,7 @@ span{
   position: relative;
   z-index: 1;
   text-decoration: none;
-  color: #ddd;
+  color: #ffffff;
   border-radius: 15px;
   line-height: 2;
   max-height: fit-content;
@@ -86,15 +93,18 @@ span{
 
 P{
 text-align: center;  
-margin-top: 10px;
+margin-top: 10px
 }
 
 /* Ensure images have consistent sizing */
 .snowman {
+  display: flex;
+  position: relative;
   width: 40vm;
   max-width: 40%;
   height: auto;
   transition: transform 0.3s ease;
+  z-index: 2;
 }
 
 
@@ -119,7 +129,17 @@ margin-top: 10px;
   transform-origin: center bottom; /* Rotate from bottom center */
 }
 /* Responsive scaling */
-@media (min-width: 768px) {
+@media (max-width: 200px) {
+  .cursor {
+    font-size: 1٢px;
+animation: typing 6s steps(15) infinite, blink 0.5s step-end infinite ;  }
+}
+
+@media (max-width: 768px) {
+  .cursor{
+    font-size: 16px;
+    animation: typing 4s steps(24) infinite, blink 0.5s step-end infinite;
+  }
   .hi,
   .rocket {
     width: 100%;
@@ -189,8 +209,8 @@ margin-top: 10px;
 
 @keyframes typing {
 0% { width: 0; }
-50% { width: 70%; }
-100% { width: 0%; } /* Zurücksetzen für Wiederholung */
+50% { width: 100%; }
+100% { width: 100%; } /* Zurücksetzen für Wiederholung */
 }
 
 @keyframes blink {
@@ -199,7 +219,8 @@ margin-top: 10px;
 }
 
 .cursor{
-justify-content: flex-start;
+display: inline-block;
+justify-content: center;
 white-space: normal;
 word-break:break-word;
 color:#348ee8;
@@ -208,9 +229,9 @@ font-size: 18px;
 white-space: nowrap;
 overflow: hidden;
 border-right: 3px solid black; /* Cursor */
-animation: typing 8s steps(20) infinite, blink 0.5s infinite;
+animation: typing 4s steps(24) infinite, blink 0.5s step-end infinite;
 animation-delay: 0s, 10s;
-animation-iteration-count: infinite;
+max-width: 100%;
 }
 
 .button{
@@ -445,10 +466,5 @@ animation-delay: 2s;
   display: none;
 }
 
-footer{
-  position: fixed;
-  height: 20px;
-
-}
 
 
