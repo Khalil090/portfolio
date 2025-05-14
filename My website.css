@@ -1,3 +1,4 @@
+
 html, body{
   overflow: auto;
 }
@@ -11,12 +12,13 @@ body {
   font-family: Arial, sans-serif;
   margin: 3px;
   padding: 0;
-  background-color: #1a1a1a;
+  background-color: #f4fdff;
   background-size: 3px 3px;
   filter: contrast(130%);
   background-image: radial-gradient(rgba(255,255,255,0.2)transparent 1px);
   position: relative;
 }
+
 header{
   background-color: #ffffff;
   padding: 0%;
@@ -24,43 +26,74 @@ header{
 
 .hero{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  text-align: center;
   text-align: center;
   padding: 2rem 1rem;
   box-sizing: border-box;
 }
 .hero-text
 {
-  max-width: 80%;
+  width: 50%;
+  max-width: 500px;
   padding: 1rem;
-  box-sizing: border-box;
 }
-.character-row {
+.ss{
   display: flex;
+  position: absolute;
+  background-color: #1987fc;
+  border-radius: 20px;
+  width: 25vw;
+  height: 25vh;
+  max-width: 40vw;
+  max-height: 28vh;
+  z-index: 0;
+  top: 0vh;
+  left: 0vw;
+}
+ul{
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap; /* If space is tight, they stack */
-  margin: 2rem auto;
-  max-width: 90vm;
   position: relative;
-
+  z-index: 1;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding:0px 0px 0px 30px;
+  margin: 0px;
+  border-radius: 35px;
+  text-align: right;
+  font-weight: bold;
+  font-size: 20px;
+  width: 25vw;
+  height: 27vh;
+  max-width: 20vw;
+  max-height: 30vh;
 }
-.image-container {
-  display: flex;
-  align-items: center;
-  gap: 30px;
+span{
   position: relative;
+  z-index: 1;
+  text-decoration: none;
+  color: #ddd;
+  border-radius: 15px;
+  line-height: 2;
+  max-height: fit-content;
+}
+
+P{
+  max-width: 80%;
+text-align: center;  
 }
 
 /* Ensure images have consistent sizing */
-.snowman, .rocket {
+.snowman {
   width: 40vm;
-  max-width: 200px;
+  max-width: 50%;
   height: auto;
   transition: transform 0.3s ease;
 }
+
 
 /* Optional: Add hover effect */
 .snowman:hover, .rocket:hover {
@@ -125,6 +158,7 @@ header{
     display: block;
     overflow: hidden;
     border-radius: 15px;
+    max-width: 500px;
     aspect-ratio: 1; /* Perfect square ratio */
 }
 
@@ -152,10 +186,8 @@ header{
 
 @keyframes typing {
 0% { width: 0; }
-50% { width: 70%; }
-80% { width: 0%; }
-40% { width: 70%; }
-80% { width: 0; } /* Zurücksetzen für Wiederholung */
+50% { width: 100%; }
+100% { width: 0%; } /* Zurücksetzen für Wiederholung */
 }
 
 @keyframes blink {
@@ -164,15 +196,16 @@ header{
 }
 
 .cursor{
+justify-content: flex-start;
+white-space: normal;
+word-break:break-word;
 color:#348ee8;
 font-family: monospace;
-font-size: 24px;
+font-size: 18px;
 white-space: nowrap;
 overflow: hidden;
 border-right: 3px solid black; /* Cursor */
-display: inline-block;
-width: 0;
-animation: typing 8s steps(20) infinite, blink 0.8s infinite;
+animation: typing 8s steps(20) infinite, blink 0.5s infinite;
 animation-delay: 0s, 10s;
 animation-iteration-count: infinite;
 }
@@ -211,26 +244,19 @@ gap: 20px;
 margin-top: 20px;
 }
 .socialmedia a{
+  fill: #ddd;
   padding: 1em;
-  border-radius: 50%;
+  border-radius: 25px;
   height: 50px;
   width: 50px;
   box-sizing: border-box;
   flex-shrink: 0;
   display: block;
   place-items:center;
+  background-color: #1987fc;
+  box-shadow: #4df9d3 0px 0px 10px;
 }
  
-.socialmedia a svg{
-height: 20px;
-width: 20px;
-
-}
-
-.element{
-  margin: 10px;
-}
-
 h1{
 font-size: 2rem;
 color: #2b79c8;
@@ -272,18 +298,7 @@ padding-left: 10px;
 }
 /* Navigation Bar */
 
-svg{
-width: 50px;
-height: 50px;
-opacity: 70%;
-margin-left: 10px;
-}
-.smiley {
-width: 100px;
-height: 100px;
-background-image: url("https://www.svgrepo.com/show/529895/smile-square.svg");
-background-size: cover;
-}
+
 .nav {
   gap: 20px;
   display: flex;
@@ -323,14 +338,6 @@ list-style: none;
 }
 
 
-
-    .last{
-      display: flex;
-      margin: 20px;
-      position: absolute;
-      justify-content: center;
-      align-items: center;
-    }
     .h{
       margin-bottom: 15px;
       margin-left: 20px;
@@ -434,12 +441,11 @@ animation-delay: 2s;
 .snowflake:nth-child(1) {
   display: none;
 }
-.cl{
-display: flex;
-margin-top: 10px;
-mix-blend-mode: multiply;
-width: 200px;
-height: 150px;
+
+footer{
+  position: fixed;
+  height: 20px;
 
 }
+
 
