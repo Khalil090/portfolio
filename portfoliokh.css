@@ -164,8 +164,8 @@ animation: typing 6s steps(20) infinite, blink 0.5s step-end infinite ;  }
     padding: 0px;
   }
   .cursor{
-    font-size: 16px;
-    animation: typing 4s steps(24) infinite, blink 0.5s step-end infinite;
+    font-size: 15px;
+    animation: typing 4s steps(32) infinite, blink 0.5s step-end infinite;
   }
   .hi,
   .rocket {
