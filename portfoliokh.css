@@ -12,7 +12,7 @@ html, body{
 body {
   font-family: Arial, sans-serif;
   padding: 5;
-  background-color: #f4fdff;
+  background-color: #1e1f29;
   background-size: 3px 3px;
   filter: contrast(130%);
   background-image: radial-gradient(rgba(255,255,255,0.2)transparent 1px);
@@ -31,14 +31,13 @@ header{
   align-items: center;
   box-sizing: border-box;
   padding: 10px;
-  overflow: hidden;
 }
 .hero-text
 {
   font-size: 1rem;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
-  width: 50%;
   text-align: center ;
   padding: 15px;
   border-radius: 35px;
@@ -46,29 +45,23 @@ header{
   margin-left: -40px;
   }
 .cursor{
-display: relative;
-justify-content: right;
-word-break:break-word;
-width: 100%;
+display: inline-block;
+white-space: nowrap;
 color:#348ee8;
 font-family: monospace;
 font-size: 1.5rem;
-white-space: nowrap;
 overflow: hidden;
 border-right: 3px solid black; /* Cursor */
-animation: typing 4s steps(22) infinite, blink 0.5s step-end infinite;
+animation: typing 4s steps(24) infinite, blink 0.5s step-end infinite;
 animation-delay: 0s, 10s;
-max-width: 100%;
 z-index: 2;
 }
 .ss{
   display: flex;
   position: absolute;
-  border: #2b79c8 2px solid;
   background-color: #2b79c8;
-  opacity: 1;
+  opacity: 0.5;
   filter: blur(1px);
-  box-shadow: #4df9d3 0px 0px 10px;
   border-radius: 20px;
   width: 25vw;
   height: 25vh;
@@ -151,8 +144,8 @@ margin-top: 10px
   .ss{
     width: 35vw;
     height: 25vh;
-    max-width: 50vw;
-    max-height: 25vh;
+    left: 5vw;
+    
   }
   .hero{
     flex-direction: column;
@@ -161,14 +154,43 @@ margin-top: 10px
   }
   .cursor{
     font-size: 14px;
-    animation: typing 4s steps(32) infinite, blink 0.5s step-end infinite;
+    animation: typing 4s steps(24) infinite, blink 0.5s step-end infinite;
   }
   .hi,
   .rocket {
     width: 100%;
   }
 }
-
+@media (max-width: 1024px) {
+  .hero-text{
+    font-size: 1rem;
+    padding: 5px;
+    width: 70%
+  }
+  .cursor{
+    font-size: 20px;
+    animation: typing 4s steps(24) infinite, blink 0.5s step-end infinite;
+  }
+  .ss{
+    width: 25vw;
+    height: 25vh;
+    max-width: 50vw;
+    max-height: 25vh;
+  }
+}
+@media (max-width: 480px) {
+  .ss{
+    width: 50vw;
+    height: 10vh;
+    top: 8vh;
+    left: -7vw;
+    max-width: 60vw;
+    
+  }
+  ul{
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;  }}
 
   
 
@@ -254,7 +276,6 @@ margin-top: 20px;
   display: block;
   place-items:center;
   background-color: #1987fc;
-  box-shadow: #4df9d3 0px 0px 10px;
 }
 
 .p{
