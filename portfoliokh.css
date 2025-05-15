@@ -145,11 +145,7 @@ margin-top: 10px
   transform-origin: center bottom; /* Rotate from bottom center */
 }
 /* Responsive scaling */
-@media (max-width: 900px) {
-  .cursor {
-    font-size: 1٢px;
-animation: typing 6s steps(20) infinite, blink 0.5s step-end infinite ;  }
-}
+
 
 @media (max-width: 768px) {
   .ss{
@@ -164,7 +160,7 @@ animation: typing 6s steps(20) infinite, blink 0.5s step-end infinite ;  }
     padding: 0px;
   }
   .cursor{
-    font-size: 15px;
+    font-size: 14px;
     animation: typing 4s steps(32) infinite, blink 0.5s step-end infinite;
   }
   .hi,
@@ -173,12 +169,8 @@ animation: typing 6s steps(20) infinite, blink 0.5s step-end infinite ;  }
   }
 }
 
-@media (min-width: 1024px) {
-  .hi,
-  .rocket {
-    width: 250px;
-  }
-}
+
+  
 
 .rocket{
   position: relative;
