@@ -1,196 +1,64 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<link rel="stylesheet" href="contact.css">
+</head>
+<body>
+	<section class="navparent">
+				<ul class="menu">
+			<a class="home" href="./index.html">Home</a> 
+            <a class="contact" href="./contact.html">Contact</a>
+            <a class="about" href="">About</a>
+			</ul>
+			</section>
+    <section id="three" class="wrapper style1 fade-up">
+						<div class="inner">
+							<dotlottie-player class="lottie"
+  src="https://lottie.host/bd2ac1ea-3d9c-4a48-8065-a158c557c928/bb3dlAxrS0.json"
+  background="transparent"
+  speed="1"
+  style="width: 300px; height: 300px"
+  loop
+  autoplay
+></dotlottie-player>
+<div class="text">
+							<h2>Get in touch</h2>
+<p>Whether you have a question, a project idea, or just want to say hello — I’d love to hear from you! Feel free to drop me an email anytime. I’m always open to meaningful conversations, or simply connecting with new people. Your message won’t go unnoticed, and I’ll make sure to get back to you as soon as I can.
+</p>
 
-body{
-    background-color: #1e1f29;
-    font-family: Arial, sans-serif;
-    color:aliceblue;
-    
-}
-
-.text{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
-}
-
-.spllit{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin: 0 auto;
-    position: relative;
-    width: 30vw;
-    height: 20vh;
-    border-radius: 25%;
-    padding: -10px;
-}
-.nav {
-    display: flex;
-    position: absolute;
-    flex-direction: row;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;;
-    padding: 10px;
-    border-radius: 20px;
-    margin: 0 auto;
-    left: 27vw;
-    top: 3vh;}
-
-a{
-    text-decoration: none;
-    color: aliceblue;
-    font-weight: bold;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-  font-family: 'Courier New', Courier, monospace;
-  margin: 0px;
-  border-radius: 35px;
-  font-weight: bold;
-  font-size: 20px;
-    
-}
-
-
-.fields input,
-.fields textarea{
-    width: 60vw;
-    padding: 5px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    color: rgb(5, 97, 97);
-    font-weight: bold;
-    font-size: large;
-    font-style: italic;
-}
-
-.submit{
-    background-color: rgb(0, 153, 153);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    color:aliceblue;
-    text-decoration: none;
-    font-size: medium;
-}
-h2{
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    font-size: 30px;
-    color:aliceblue
-}
-.ss{
-  display: flex;
-  position: relative;
-  justify-content: center;
-  margin: 0 auto;
-  background-color: #2b79c8;
-  opacity: 0.5;
-  filter: blur(1px);
-  border-radius: 20px;
-  width: 60vw;
-  height: 10vh;
-  max-height: 25vh;
-  z-index: 0;
-  margin-bottom: 15vh;
-}
-.navparent{
-    display: flex;
-    justify-content: center;
-    top: 05vh;
-    position: relative;
-    margin: 0 auto;
-
-}
-.home{
-  transition: 0.3s ease-in-out;
-  cursor: pointer;
-}
-.home:hover{
-  color: #348ee8;
-  border-radius: 10px;
-  background-color: #ffffff;
-  padding: 10px;
-  transition: 0.3s ease-in-out;
-}
-/*contact button animation*/
-
-.contact{
-  transition: 0.3s ease-in-out;
-  cursor: pointer;
-}
-.contact:hover{
-  color: #348ee8;
-  border-radius: 10px;
-  background-color: #ffffff;
-  padding: 10px;
-  transition: 0.3s ease-in-out;
-}
-/*about button animation*/
-
-.about{
-  transition: 0.3s ease-in-out;
-  cursor: pointer;
-}
-.about:hover{
-  color: #348ee8;
-  border-radius: 10px;
-  background-color: #ffffff;
-  padding: 10px;
-  transition: 0.3s ease-in-out;
-}
-img{
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    position: relative;
-    width: 30vw;
-    height: 20vh;
-    border-radius: 25%;
-    padding: -10px;
-}
-.lottie{
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    position: relative;
-    width: 30vw;
-    height: 20vh;
-    border-radius: 25%;
-    padding: -10px;
-}
-p{
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: lighter;
-    font-size: 2 rem;
-    color:aliceblue;
-    padding: 10px;
-    margin: 20px;
-    max-width: 700px;
-}
-
-@media (max-width: 768px){
-    .nav{
-        flex-direction: row;
-        gap: 15px;
-        justify-content: center;
-        top: 2vh;
-    }
-    .text{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        font-size: 1 rem;
-        margin: 0 auto;
-    }
-}
+							<div class="split style1">
+								<section>
+									<form method="post" action="https://formsubmit.co/ahmad.khaliel@gmail.com">
+										<div class="fields">
+											<div class="field half">
+												<label for="name">Name <br></label>
+												<input type="text" name="name" id="name" />
+											</div>
+											<div class="field half">
+												<label for="email">Email <br></label>
+												<input type="text" name="email" id="email" />
+											</div>
+											<div class="field">
+												<label for="message">Message <br></label>
+												<textarea name="message" id="message" rows="5"></textarea>
+											</div>
+										</div><br>
+										<ul class="actions">
+											<a href="" class="submit">Send Message</a>
+										</ul>
+									</form>
+								</section>
+							
+			</div>
+			<script src="portfoliokh.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+          <script src="https://unpkg.com/@motionone/dom/dist/motion.min.js"></script>
+		  <script
+  src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+  type="module"
+></script>
+</body>
+</html>
