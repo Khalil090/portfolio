@@ -1,6 +1,4 @@
-*{
-    box-sizing: border-box;
-}
+
 
 body{
     background-color: #1e1f29;
@@ -90,7 +88,6 @@ h2{
 .navparent{
     display: flex;
     justify-content: center;
-    top: 05vh;
     position: relative;
     margin: 0 auto;
 
