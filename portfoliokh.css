@@ -331,7 +331,14 @@ P {
     gap: 20px;
   }
 }
-.grid-container a {
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.project-card a {
   position: relative;
   display: block;
   overflow: hidden;
@@ -345,7 +352,7 @@ P {
   box-sizing: border-box;
 }
 
-.grid-container img {
+.project-card img {
   filter: grayscale(100%) brightness(50%);
   width: 100%;
   height: 100%;
@@ -355,7 +362,7 @@ P {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.grid-container a::before {
+.project-card a::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -374,7 +381,7 @@ P {
 }
 
 /* Glass-shaped fully-rounded rectangles for project essence */
-.grid-container a .project-essence {
+.project-card a .project-essence {
   position: absolute;
   bottom: 15px;
   left: 15px;
@@ -398,7 +405,7 @@ P {
   text-align: center;
 }
 
-.grid-container a .project-details {
+.project-card a .project-details {
   position: absolute;
   bottom: 15px;
   right: 15px;
@@ -424,22 +431,22 @@ P {
   box-shadow: 0 4px 15px rgba(25, 135, 252, 0.2);
 }
 
-.grid-container a:hover .project-essence,
-.grid-container a:hover .project-details {
+.project-card a:hover .project-essence,
+.project-card a:hover .project-details {
   opacity: 1;
   transform: translateY(0);
 }
 
-.grid-container a:hover::before {
+.project-card a:hover::before {
   opacity: 0.7;
 }
 
 /* Liquid glass shape elements */
 
 /* Additional liquid glass shapes */
-.grid-container a .liquid-shape-1,
-.grid-container a .liquid-shape-2,
-.grid-container a .liquid-shape-3 {
+.project-card a .liquid-shape-1,
+.project-card a .liquid-shape-2,
+.project-card a .liquid-shape-3 {
   position: absolute;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(77, 249, 211, 0.3) 0%, transparent 70%);
@@ -449,7 +456,7 @@ P {
   filter: blur(1px);
 }
 
-.grid-container a .liquid-shape-1 {
+.project-card a .liquid-shape-1 {
   width: min(60px, 15vw);
   height: min(60px, 15vw);
   max-width: 60px;
@@ -460,7 +467,7 @@ P {
   animation: float-shape-1 3s ease-in-out infinite;
 }
 
-.grid-container a .liquid-shape-2 {
+.project-card a .liquid-shape-2 {
   width: min(40px, 10vw);
   height: min(40px, 10vw);
   max-width: 40px;
@@ -471,7 +478,7 @@ P {
   animation: float-shape-2 4s ease-in-out infinite;
 }
 
-.grid-container a .liquid-shape-3 {
+.project-card a .liquid-shape-3 {
   width: min(80px, 20vw);
   height: min(80px, 20vw);
   max-width: 80px;
@@ -497,73 +504,133 @@ P {
   50% { transform: translate(min(15px, 3vw), min(-8px, -2vw)) scale(1.05); }
 }
 
+/* Project Info Styles */
+.project-info {
+  padding: 20px 0;
+  text-align: left;
+}
+
+.project-title {
+  color: #ffffff;
+  font-family: "Courier New", Courier, monospace;
+  font-style: italic;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.project-description {
+  color: #a0a0a0;
+  font-family: "Courier New", Courier, monospace;
+  font-style: normal;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0;
+  opacity: 0.9;
+}
+
 /* Responsive adjustments for smaller screens */
 @media (max-width: 1024px) {
-  .grid-container a {
+  .project-card a {
     min-width: 180px;
     min-height: 135px;
     max-height: 350px;
   }
   
-  .grid-container a .liquid-shape-1 {
+  .project-card a .liquid-shape-1 {
     width: min(50px, 13vw);
     height: min(50px, 13vw);
   }
   
-  .grid-container a .liquid-shape-2 {
+  .project-card a .liquid-shape-2 {
     width: min(35px, 9vw);
     height: min(35px, 9vw);
   }
   
-  .grid-container a .liquid-shape-3 {
+  .project-card a .liquid-shape-3 {
     width: min(65px, 17vw);
     height: min(65px, 17vw);
+  }
+  
+  .project-title {
+    font-size: 1.1rem;
+  }
+  
+  .project-description {
+    font-size: 0.85rem;
   }
 }
 
 @media (max-width: 768px) {
-  .grid-container a {
+  .project-card a {
     min-width: 180px;
     min-height: 135px;
     max-height: 350px;
   }
   
-  .grid-container a .liquid-shape-1 {
+  .project-card a .liquid-shape-1 {
     width: min(35px, 10vw);
     height: min(35px, 10vw);
   }
   
-  .grid-container a .liquid-shape-2 {
+  .project-card a .liquid-shape-2 {
     width: min(25px, 7vw);
     height: min(25px, 7vw);
   }
   
-  .grid-container a .liquid-shape-3 {
+  .project-card a .liquid-shape-3 {
     width: min(45px, 12vw);
     height: min(45px, 12vw);
   }
   
-  @media (max-width: 400px) {
-    .grid-container a {
-      min-width: 150px;
-      min-height: 120px;
-      max-height: 300px;
-    }
-    
-    .grid-container a .liquid-shape-1 {
-      top: 10%;
-      left: 5%;
-    }
-    
-    .grid-container a .liquid-shape-2 {
-      top: 75%;
-      right: 5%;
-    }
-    
-    .grid-container a .liquid-shape-3 {
-      bottom: 15%;
-      left: 75%;
-    }
+  .project-title {
+    font-size: 1rem;
+  }
+  
+  .project-description {
+    font-size: 0.8rem;
+  }
+  
+  .project-info {
+    padding: 15px 0;
+  }
+  
+}
+
+@media (max-width: 400px) {
+  .project-card a {
+    min-width: 150px;
+    min-height: 120px;
+    max-height: 300px;
+  }
+  
+  .project-card a .liquid-shape-1 {
+    top: 10%;
+    left: 5%;
+  }
+  
+  .project-card a .liquid-shape-2 {
+    top: 75%;
+    right: 5%;
+  }
+  
+  .project-card a .liquid-shape-3 {
+    bottom: 15%;
+    left: 75%;
+  }
+  
+  .project-title {
+    font-size: 0.95rem;
+  }
+  
+  .project-description {
+    font-size: 0.75rem;
+  }
+  
+  .project-info {
+    padding: 12px 0;
   }
 }
 
@@ -573,63 +640,77 @@ P {
     padding: 0.5rem;
   }
   
-  .grid-container a {
+  .project-card a {
     min-width: 180px;
     min-height: 135px;
     max-height: 350px;
   }
   
-  .grid-container a .liquid-shape-1 {
+  .project-card a .liquid-shape-1 {
     width: min(25px, 8vw);
     height: min(25px, 8vw);
   }
   
-  .grid-container a .liquid-shape-2 {
+  .project-card a .liquid-shape-2 {
     width: min(20px, 6vw);
     height: min(20px, 6vw);
   }
   
-  .grid-container a .liquid-shape-3 {
+  .project-card a .liquid-shape-3 {
     width: min(30px, 10vw);
     height: min(30px, 10vw);
+  }
+  
+  .project-title {
+    font-size: 1.1rem;
+  }
+  
+  .project-description {
+    font-size: 0.85rem;
   }
 }
 
 @media (max-width: 320px) {
-  .grid-container a .liquid-shape-1 {
+  .project-card a .liquid-shape-1 {
     width: min(20px, 6vw);
     height: min(20px, 6vw);
   }
   
-  .grid-container a .liquid-shape-2 {
+  .project-card a .liquid-shape-2 {
     width: min(15px, 5vw);
     height: min(15px, 5vw);
   }
   
-  .grid-container a .liquid-shape-3 {
+  .project-card a .liquid-shape-3 {
     width: min(25px, 8vw);
     height: min(25px, 8vw);
   }
-}
-
-@media (max-width: 320px) {
+  
   .grid-container {
     padding: 0.25rem;
   }
   
-  .grid-container a {
+  .project-card a {
     min-width: 150px;
     min-height: 120px;
   }
+  
+  .project-title {
+    font-size: 0.9rem;
+  }
+  
+  .project-description {
+    font-size: 0.7rem;
+  }
 }
 
-.grid-container a:hover .liquid-shape-1,
-.grid-container a:hover .liquid-shape-2,
-.grid-container a:hover .liquid-shape-3 {
+.project-card a:hover .liquid-shape-1,
+.project-card a:hover .liquid-shape-2,
+.project-card a:hover .liquid-shape-3 {
   opacity: 1;
 }
 
-.grid-container a:hover img {
+.project-card a:hover img {
   filter: grayscale(0%) brightness(90%);
   transform: scale(1.1);
 }
@@ -726,7 +807,7 @@ P {
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left;
   font-size: 1.1rem;
   margin-bottom: 20px;
 }
