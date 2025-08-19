@@ -240,22 +240,27 @@ P {
 }
 
 .grid-container a::after {
-  content: attr(data-info);
+  content: attr(data-info) "\A\A→ more details";
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 20px;
+  padding: clamp(12px, 3vw, 20px);
   color: #ffffff;
-  background: rgba(25, 135, 252, 0.1);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(25, 135, 252, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0 0 15px 15px;
   transform: translateY(100%);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: "Courier New", Courier, monospace;
   font-style: italic;
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
+  line-height: 1.4;
+  white-space: pre-line;
   z-index: 2;
+  box-shadow: 0 -4px 20px rgba(25, 135, 252, 0.3);
 }
 
 .grid-container a:hover::before {
@@ -264,6 +269,165 @@ P {
 
 .grid-container a:hover::after {
   transform: translateY(0);
+}
+
+/* Liquid glass shape elements */
+.grid-container a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(77, 249, 211, 0.1) 25%,
+    rgba(25, 135, 252, 0.15) 50%,
+    rgba(207, 35, 255, 0.1) 75%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: all 0.4s ease;
+  z-index: 1;
+  border-radius: 15px;
+}
+
+/* Additional liquid glass shapes */
+.grid-container a .liquid-shape-1,
+.grid-container a .liquid-shape-2,
+.grid-container a .liquid-shape-3 {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(77, 249, 211, 0.3) 0%, transparent 70%);
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+  filter: blur(1px);
+}
+
+.grid-container a .liquid-shape-1 {
+  width: min(60px, 15vw);
+  height: min(60px, 15vw);
+  max-width: 60px;
+  max-height: 60px;
+  top: 20%;
+  left: 15%;
+  background: radial-gradient(circle, rgba(77, 249, 211, 0.4) 0%, transparent 70%);
+  animation: float-shape-1 3s ease-in-out infinite;
+}
+
+.grid-container a .liquid-shape-2 {
+  width: min(40px, 10vw);
+  height: min(40px, 10vw);
+  max-width: 40px;
+  max-height: 40px;
+  top: 60%;
+  right: 20%;
+  background: radial-gradient(circle, rgba(25, 135, 252, 0.4) 0%, transparent 70%);
+  animation: float-shape-2 4s ease-in-out infinite;
+}
+
+.grid-container a .liquid-shape-3 {
+  width: min(80px, 20vw);
+  height: min(80px, 20vw);
+  max-width: 80px;
+  max-height: 80px;
+  bottom: 30%;
+  left: 60%;
+  background: radial-gradient(circle, rgba(207, 35, 255, 0.3) 0%, transparent 70%);
+  animation: float-shape-3 5s ease-in-out infinite;
+}
+
+@keyframes float-shape-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(min(10px, 2vw), min(-15px, -3vw)) scale(1.1); }
+}
+
+@keyframes float-shape-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(min(-8px, -2vw), min(12px, 2.5vw)) scale(0.9); }
+}
+
+@keyframes float-shape-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(min(15px, 3vw), min(-8px, -2vw)) scale(1.05); }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1024px) {
+  .grid-container a .liquid-shape-1 {
+    width: min(50px, 13vw);
+    height: min(50px, 13vw);
+  }
+  
+  .grid-container a .liquid-shape-2 {
+    width: min(35px, 9vw);
+    height: min(35px, 9vw);
+  }
+  
+  .grid-container a .liquid-shape-3 {
+    width: min(65px, 17vw);
+    height: min(65px, 17vw);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-container a .liquid-shape-1 {
+    width: min(35px, 10vw);
+    height: min(35px, 10vw);
+  }
+  
+  .grid-container a .liquid-shape-2 {
+    width: min(25px, 7vw);
+    height: min(25px, 7vw);
+  }
+  
+  .grid-container a .liquid-shape-3 {
+    width: min(45px, 12vw);
+    height: min(45px, 12vw);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-container a .liquid-shape-1 {
+    width: min(25px, 8vw);
+    height: min(25px, 8vw);
+  }
+  
+  .grid-container a .liquid-shape-2 {
+    width: min(20px, 6vw);
+    height: min(20px, 6vw);
+  }
+  
+  .grid-container a .liquid-shape-3 {
+    width: min(30px, 10vw);
+    height: min(30px, 10vw);
+  }
+}
+
+@media (max-width: 320px) {
+  .grid-container a .liquid-shape-1 {
+    width: min(20px, 6vw);
+    height: min(20px, 6vw);
+  }
+  
+  .grid-container a .liquid-shape-2 {
+    width: min(15px, 5vw);
+    height: min(15px, 5vw);
+  }
+  
+  .grid-container a .liquid-shape-3 {
+    width: min(25px, 8vw);
+    height: min(25px, 8vw);
+  }
+}
+
+.grid-container a:hover::before {
+  opacity: 1;
+}
+
+.grid-container a:hover .liquid-shape-1,
+.grid-container a:hover .liquid-shape-2,
+.grid-container a:hover .liquid-shape-3 {
+  opacity: 1;
 }
 
 .grid-container a:hover img {
