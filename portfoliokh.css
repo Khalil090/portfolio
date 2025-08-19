@@ -55,7 +55,7 @@ body {
   font-size: 1.5rem;
   overflow: hidden;
   border-right: 3px solid #4df9d3; /* Cursor */
-  animation: typing 4s steps(21) infinite, blink 0.5s step-end infinite;
+  animation: typing 4s steps(24) infinite, blink 0.5s step-end infinite;
   animation-delay: 0s, 10s;
   max-width: fit-content;
   align-items: center;
@@ -246,6 +246,8 @@ P {
     flex-direction: column;
     align-items: center;
     padding: 0px;
+    width: 100%;
+    box-sizing: border-box;
   }
   .cursor {
     font-size: 20px;
@@ -254,6 +256,16 @@ P {
   .hi,
   .rocket {
     width: 100%;
+  }
+  
+  .hero-text {
+    width: 90%;
+    padding: 10px;
+  }
+  
+  .profile-image {
+    width: 120px;
+    height: 120px;
   }
 }
 @media (max-width: 1024px) {
@@ -284,6 +296,21 @@ P {
     flex-direction: row;
     justify-content: center;
     gap: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+  }
+  
+  .hero {
+    padding: 5px;
+  }
+  
+  .hero-text {
+    width: 95%;
+    padding: 5px;
+  }
+  
+  .cursor {
+    font-size: 18px;
   }
 }
 .grid-container {
@@ -293,6 +320,8 @@ P {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
@@ -311,6 +340,8 @@ P {
   min-height: 150px;
   max-height: 400px;
   aspect-ratio: 1.5; /* 3:2 ratio for wider screens */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .grid-container img {
@@ -439,6 +470,12 @@ P {
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 1024px) {
+  .grid-container a {
+    min-width: 180px;
+    min-height: 135px;
+    max-height: 350px;
+  }
+  
   .grid-container a .liquid-shape-1 {
     width: min(50px, 13vw);
     height: min(50px, 13vw);
@@ -456,6 +493,12 @@ P {
 }
 
 @media (max-width: 768px) {
+  .grid-container a {
+    min-width: 180px;
+    min-height: 135px;
+    max-height: 350px;
+  }
+  
   .grid-container a .liquid-shape-1 {
     width: min(35px, 10vw);
     height: min(35px, 10vw);
@@ -472,6 +515,12 @@ P {
   }
   
   @media (max-width: 400px) {
+    .grid-container a {
+      min-width: 150px;
+      min-height: 120px;
+      max-height: 300px;
+    }
+    
     .grid-container a .liquid-shape-1 {
       top: 10%;
       left: 5%;
@@ -490,6 +539,17 @@ P {
 }
 
 @media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    padding: 0.5rem;
+  }
+  
+  .grid-container a {
+    min-width: 180px;
+    min-height: 135px;
+    max-height: 350px;
+  }
+  
   .grid-container a .liquid-shape-1 {
     width: min(25px, 8vw);
     height: min(25px, 8vw);
@@ -520,6 +580,17 @@ P {
   .grid-container a .liquid-shape-3 {
     width: min(25px, 8vw);
     height: min(25px, 8vw);
+  }
+}
+
+@media (max-width: 320px) {
+  .grid-container {
+    padding: 0.25rem;
+  }
+  
+  .grid-container a {
+    min-width: 150px;
+    min-height: 120px;
   }
 }
 
