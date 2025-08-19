@@ -2,6 +2,7 @@
 html, body {
   overflow: auto;
   padding: 5px;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -372,37 +373,65 @@ P {
   border-radius: 15px;
 }
 
-.grid-container a::after {
-  content: attr(data-info) "\A\A→ more details";
+/* Glass-shaped fully-rounded rectangles for project essence */
+.grid-container a .project-essence {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: clamp(12px, 3vw, 20px);
-  color: #000000;
-  background: rgba(25, 135, 252, 0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 0 0 15px 15px;
-  transform: translateY(100%);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  bottom: 15px;
+  left: 15px;
+  padding: 8px 12px;
+  color: #ffffff;
+  background: rgba(25, 135, 252, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
   font-family: "Courier New", Courier, monospace;
   font-style: italic;
-  font-size: clamp(0.75rem, 2vw, 0.9rem);
+  font-size: 0.8rem;
   font-weight: bold;
-  line-height: 1.4;
-  white-space: pre-line;
   z-index: 2;
-  box-shadow: 0 -4px 20px rgba(25, 135, 252, 0.3);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(25, 135, 252, 0.2);
+  max-width: 80%;
+  text-align: center;
+}
+
+.grid-container a .project-details {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: rgba(25, 135, 252, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  font-family: "Courier New", Courier, monospace;
+  font-style: italic;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(25, 135, 252, 0.2);
+}
+
+.grid-container a:hover .project-essence,
+.grid-container a:hover .project-details {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .grid-container a:hover::before {
   opacity: 0.7;
-}
-
-.grid-container a:hover::after {
-  transform: translateY(0);
 }
 
 /* Liquid glass shape elements */
