@@ -83,13 +83,86 @@ ul {
   flex-direction: column;
   position: relative;
   align-items: center;
-  background-color: #0358a9;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-radius: 20px;
   font-weight: bold;
   font-size: 20px;
   padding: 10px 15px;
   margin: 0px;
+  background: rgba(25, 135, 252, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(25, 135, 252, 0.3);
+  overflow: hidden;
+}
+
+ul::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(77, 249, 211, 0.1) 25%,
+    rgba(25, 135, 252, 0.15) 50%,
+    rgba(207, 35, 255, 0.1) 75%,
+    transparent 100%
+  );
+  opacity: 0.3;
+  transition: all 0.4s ease;
+  z-index: -1;
+  border-radius: 20px;
+}
+
+ul:hover::before {
+  opacity: 0.7;
+}
+
+/* Liquid glass shape elements for main menu */
+ul .liquid-shape-1,
+ul .liquid-shape-2,
+ul .liquid-shape-3 {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(77, 249, 211, 0.3) 0%, transparent 70%);
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+  filter: blur(1px);
+}
+
+ul .liquid-shape-1 {
+  width: 60px;
+  height: 60px;
+  top: 15%;
+  left: 10%;
+  background: radial-gradient(circle, rgba(77, 249, 211, 0.4) 0%, transparent 70%);
+  animation: float-shape-1 3s ease-in-out infinite;
+}
+
+ul .liquid-shape-2 {
+  width: 40px;
+  height: 40px;
+  top: 70%;
+  right: 10%;
+  background: radial-gradient(circle, rgba(25, 135, 252, 0.4) 0%, transparent 70%);
+  animation: float-shape-2 4s ease-in-out infinite;
+}
+
+ul .liquid-shape-3 {
+  width: 80px;
+  height: 80px;
+  bottom: 20%;
+  left: 70%;
+  background: radial-gradient(circle, rgba(207, 35, 255, 0.3) 0%, transparent 70%);
+  animation: float-shape-3 5s ease-in-out infinite;
+}
+
+ul:hover .liquid-shape-1,
+ul:hover .liquid-shape-2,
+ul:hover .liquid-shape-3 {
+  opacity: 1;
 }
 
 a {
@@ -139,6 +212,32 @@ P {
 .snowman {
   animation: float 3s ease-in-out infinite;
   transform-origin: center bottom; /* Rotate from bottom center */
+}
+
+.profile-image {
+  animation: subtleFloat 4s ease-in-out infinite;
+  transform-origin: center center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+@keyframes subtleFloat {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(5px, -5px) rotate(2deg);
+  }
+  50% {
+    transform: translate(0, -10px) rotate(0deg);
+  }
+  75% {
+    transform: translate(-5px, -5px) rotate(-2deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
 }
 
 /* Responsive scaling */
@@ -207,16 +306,15 @@ P {
   display: block;
   overflow: hidden;
   border-radius: 15px;
+  min-width: 200px;
   max-width: 500px;
-  aspect-ratio: 1; /* Perfect square ratio */
-}
-
-.grid-container a { /* for desktop */
+  min-height: 150px;
+  max-height: 400px;
   aspect-ratio: 1.5; /* 3:2 ratio for wider screens */
 }
 
 .grid-container img {
-  filter: grayscale(100%) brightness(70%);
+  filter: grayscale(100%) brightness(50%);
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -230,13 +328,17 @@ P {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(30, 31, 41, 0.95)
+    135deg,
+    transparent 0%,
+    rgba(77, 249, 211, 0.1) 25%,
+    rgba(25, 135, 252, 0.15) 50%,
+    rgba(207, 35, 255, 0.1) 75%,
+    transparent 100%
   );
-  opacity: 0;
-  transition: opacity 0.4s ease;
+  opacity: 0.3;
+  transition: all 0.4s ease;
   z-index: 1;
+  border-radius: 15px;
 }
 
 .grid-container a::after {
@@ -246,7 +348,7 @@ P {
   left: 0;
   right: 0;
   padding: clamp(12px, 3vw, 20px);
-  color: #ffffff;
+  color: #000000;
   background: rgba(25, 135, 252, 0.15);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -257,6 +359,7 @@ P {
   font-family: "Courier New", Courier, monospace;
   font-style: italic;
   font-size: clamp(0.75rem, 2vw, 0.9rem);
+  font-weight: bold;
   line-height: 1.4;
   white-space: pre-line;
   z-index: 2;
@@ -264,7 +367,7 @@ P {
 }
 
 .grid-container a:hover::before {
-  opacity: 1;
+  opacity: 0.7;
 }
 
 .grid-container a:hover::after {
@@ -272,23 +375,6 @@ P {
 }
 
 /* Liquid glass shape elements */
-.grid-container a::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    transparent 0%,
-    rgba(77, 249, 211, 0.1) 25%,
-    rgba(25, 135, 252, 0.15) 50%,
-    rgba(207, 35, 255, 0.1) 75%,
-    transparent 100%
-  );
-  opacity: 0;
-  transition: all 0.4s ease;
-  z-index: 1;
-  border-radius: 15px;
-}
 
 /* Additional liquid glass shapes */
 .grid-container a .liquid-shape-1,
@@ -308,8 +394,8 @@ P {
   height: min(60px, 15vw);
   max-width: 60px;
   max-height: 60px;
-  top: 20%;
-  left: 15%;
+  top: 15%;
+  left: 10%;
   background: radial-gradient(circle, rgba(77, 249, 211, 0.4) 0%, transparent 70%);
   animation: float-shape-1 3s ease-in-out infinite;
 }
@@ -319,8 +405,8 @@ P {
   height: min(40px, 10vw);
   max-width: 40px;
   max-height: 40px;
-  top: 60%;
-  right: 20%;
+  top: 70%;
+  right: 10%;
   background: radial-gradient(circle, rgba(25, 135, 252, 0.4) 0%, transparent 70%);
   animation: float-shape-2 4s ease-in-out infinite;
 }
@@ -330,8 +416,8 @@ P {
   height: min(80px, 20vw);
   max-width: 80px;
   max-height: 80px;
-  bottom: 30%;
-  left: 60%;
+  bottom: 20%;
+  left: 70%;
   background: radial-gradient(circle, rgba(207, 35, 255, 0.3) 0%, transparent 70%);
   animation: float-shape-3 5s ease-in-out infinite;
 }
@@ -384,6 +470,23 @@ P {
     width: min(45px, 12vw);
     height: min(45px, 12vw);
   }
+  
+  @media (max-width: 400px) {
+    .grid-container a .liquid-shape-1 {
+      top: 10%;
+      left: 5%;
+    }
+    
+    .grid-container a .liquid-shape-2 {
+      top: 75%;
+      right: 5%;
+    }
+    
+    .grid-container a .liquid-shape-3 {
+      bottom: 15%;
+      left: 75%;
+    }
+  }
 }
 
 @media (max-width: 480px) {
@@ -418,10 +521,6 @@ P {
     width: min(25px, 8vw);
     height: min(25px, 8vw);
   }
-}
-
-.grid-container a:hover::before {
-  opacity: 1;
 }
 
 .grid-container a:hover .liquid-shape-1,
