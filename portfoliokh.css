@@ -1079,6 +1079,66 @@ P {
         justify-content: center;
     }
 }
+/*# Last update begins after this line */
+/* === Math Page Grid === */
+.math-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+
+  /* Hintergrund = horizontale + vertikale Ruler Lines */
+  background:
+    repeating-linear-gradient(
+      to right,
+      rgba(200,200,200,0.08) 0px,
+      rgba(200,200,200,0.08) 1px,
+      transparent 1px,
+      transparent 40px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(200,200,200,0.08) 0px,
+      rgba(200,200,200,0.08) 1px,
+      transparent 1px,
+      transparent 40px
+    );
+
+  /* weiches Ausblenden an den Rändern */
+  -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: cover;
+  mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: cover;
+}
+
+/* === Cross Ruler in top-left corner === */
+.math-grid::before,
+.math-grid::after {
+  content: "";
+  position: absolute;
+  background: rgba(211,211,211,0.3);
+}
+
+.math-grid::before {
+  top: 0;
+  left: 0;
+  width: 100px;   /* Länge vom Lineal oben */
+  height: 2px;
+}
+
+.math-grid::after {
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100px;  /* Länge vom Lineal links */
+}
 
 /*# sourceMappingURL=portfoliokh.css.map */
 
