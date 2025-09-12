@@ -12,14 +12,179 @@ html, body {
   font-style: italic;
 }
 
+:root {
+  --bg-color: #1e1f29;
+  --text-color: #ffffff;
+  --accent-color: #4d4df9;
+}
+
 body {
   font-family: Arial, sans-serif;
   padding: 5px;
-  background-color: #1e1f29;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   background-size: 3px 3px;
-  filter: contrast(130%);
   background-image: radial-gradient(rgba(255, 255, 255, 0.2) transparent 1px);
   position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Theme Variables */
+body[data-theme="dark"] {
+  --bg-color: #1e1f29;
+  --text-color: #ffffff;
+  --accent-color: #4d4df9;
+}
+
+body[data-theme="teal"] {
+  --bg-color: #004444;
+  --text-color: #ffffff;
+  --accent-color: #008080;
+}
+
+body[data-theme="purple"] {
+  --bg-color: #2D1B69;
+  --text-color: #ffffff;
+  --accent-color: #9747FF;
+}
+
+body[data-theme="light"] {
+  --bg-color: #FAF3E3;
+  --text-color: #1e1f29;
+  --accent-color: #4d4df9;
+}
+
+body[data-theme="light"] .project-title {
+  color: #333333;
+}
+
+/* Control Center and Theme Switcher Styles */
+.control-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto 10px;
+  padding: 10px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.theme-switcher {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 0;
+  padding: 10px;
+  width: 100%;
+}
+
+.socialmedia {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.socialmedia svg {
+  width: 22px;
+  height: 22px;
+  fill: var(--text-color, #ffffff);
+  transition: all 0.3s ease-in-out;
+}
+
+.socialmedia a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.socialmedia a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.socialmedia a:hover svg {
+  fill: var(--accent-color);
+}
+
+.theme-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+.theme-btn[data-theme="dark"] {
+  background-color: #1e1f29;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.theme-btn[data-theme="teal"] {
+  background-color: #004444;
+  box-shadow: 0 0 10px rgba(0,68,68,0.2);
+}
+
+.theme-btn[data-theme="purple"] {
+  background-color: #2D1B69;
+  box-shadow: 0 0 10px rgba(45,27,105,0.2);
+}
+
+.theme-btn[data-theme="light"] {
+  background-color: #FAF3E3;
+  box-shadow: 0 0 10px rgba(250,243,227,0.2);
+}
+
+.theme-btn.active {
+  border: 3px solid #ffffff;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease-in-out;
+  padding: 8px;
+}
+
+.social-icons svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--text-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-3px);
+}
+
+.social-icons a:hover svg {
+  fill: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
 }
 
 .hero {
@@ -316,19 +481,29 @@ P {
 }
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 1rem;
+  margin: 1rem auto;
+  padding: 0 2rem;
   width: 100%;
   box-sizing: border-box;
+  justify-content: center;
+  align-items: start;
 }
 
 @media (min-width: 768px) {
   .grid-container {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 4rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
+    padding: 0 2rem;
   }
 }
 
@@ -386,7 +561,7 @@ P {
   bottom: 15px;
   left: 15px;
   padding: 8px 12px;
-  color: #ffffff;
+  color: var(--card-title-color, #ffffff);
   background: rgba(25, 135, 252, 0.25);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -414,7 +589,7 @@ P {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: var(--card-details-color, #ffffff);
   background: rgba(25, 135, 252, 0.25);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -1080,6 +1255,93 @@ P {
     }
 }
 /*# Last update begins after this line */
+
+/* Theme System */
+:root {
+  --transition-speed: 0.3s;
+}
+
+/* Theme Variables */
+body[data-theme="dark"] {
+  --bg-color: #1e1f29;
+  --text-color: #ffffff;
+  --link-color: #4d4df9;
+  --hover-color: #6e6ef9;
+}
+
+body[data-theme="green"] {
+  --bg-color: #1a4a1c;
+  --text-color: #ffffff;
+  --link-color: #4dff4d;
+  --hover-color: #6eff6e;
+}
+
+body[data-theme="purple"] {
+  --bg-color: #2D1B69;
+  --text-color: #ffffff;
+  --link-color: #9747FF;
+  --hover-color: #B47EFF;
+  --card-title-color: #ffffff;
+  --card-details-color: rgba(255, 255, 255, 0.9);
+}
+
+body[data-theme="light"] {
+  --bg-color: #FAF3E3;
+  --text-color: #1e1f29;
+  --link-color: #2D1B69;
+  --hover-color: #1a4a1c;
+  --card-title-color: #333333;
+  --card-details-color: #666666;
+}
+
+/* Global theme transitions */
+body, a, svg, .theme-btn {
+  transition: all var(--transition-speed) ease-in-out;
+}
+
+/* Theme-aware elements */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+a {
+  color: var(--link-color);
+}
+
+.hero-text, .project-essence, .project-details {
+  color: var(--text-color);
+}
+
+.socialmedia {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.socialmedia svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--text-color);
+}
+
+.socialmedia a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all var(--transition-speed) ease-in-out;
+}
+
+.socialmedia a:hover {
+  transform: scale(1.1);
+}
+
+.socialmedia a:hover svg {
+  fill: var(--hover-color);
+}
 /* === Math Page Grid === */
 .math-grid {
   position: fixed;
