@@ -6,22 +6,15 @@ body{
     color:aliceblue;
     
 }
-.menu{
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  align-items: center;
-  background-color: #0358a9;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  border-radius: 20px;
-  font-weight: bold;
-  font-size: 20px;
-}
 
 .text{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    color: #1e1f29;
+    background-color: aliceblue;
+    padding: 15px 20px;
+    border-radius: 15px;
 
 }
 
@@ -67,21 +60,36 @@ a{
     font-style: italic;
 }
 
-.submit{
+.submit-btn{
     background-color: rgb(0, 153, 153);
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 4px;
-    color:aliceblue;
-    text-decoration: none;
+    border-radius: 25px;
+    color: aliceblue;
     font-size: medium;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.submit-btn:hover{
+    background-color: rgb(0, 180, 180);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 153, 153, 0.4);
+}
+
+.submit-btn:active{
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 153, 153, 0.4);
 }
 h2{
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     font-size: 30px;
-    color:aliceblue
+    color:rgb(10, 10, 10)
 }
 
 
@@ -154,7 +162,7 @@ p{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: lighter;
     font-size: 2 rem;
-    color:aliceblue;
+    color:rgb(95, 95, 95);
     padding: 10px;
     margin: 20px;
     max-width: 700px;
