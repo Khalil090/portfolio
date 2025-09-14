@@ -5,16 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 	<link rel="stylesheet" href="contact.css">
+	<link rel="stylesheet" href="portfoliokh.css">
+	<script src="contact.js"></script>
 </head>
 <body>
-	<section class="navparent">
-				<ul class="menu">
-			<a class="home" href="./index.html">Home</a> 
-            <a class="contact" href="./contact.html">Contact</a>
-            <a class="about" href="">About</a>
-			</ul>
-			</section>
-    <section id="three" class="wrapper style1 fade-up">
+    <!-- Math Grid Overlay -->
+    <div class="math-grid"></div>
+    <!-- Burger Menu Button -->
+    <div class="burger-menu">
+        <div class="burger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- Side Navigation Menu -->
+    <nav class="side-nav">
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="" class="nav-link">About</a>
+        </div>
+    </nav>
 						<div class="inner">
 							<dotlottie-player class="lottie"
   src="https://lottie.host/bd2ac1ea-3d9c-4a48-8065-a158c557c928/bb3dlAxrS0.json"
@@ -26,7 +39,7 @@
 ></dotlottie-player>
 <div class="text">
 							<h2>Get in touch</h2>
-<p>Whether you have a question, a project idea, or want to say hello — I’d love to hear from you! Feel free to drop me an email anytime. Rest assured that your message won’t go unnoticed, and I’ll get back to you as soon as possible.
+<p>Plesae feel free to reach out, whether you have a question, a project idea, or just want to say hello! You can contact me by filling the form bellow or via email at ahmad.khaliel@gmail.com
 </p>
 
 							<div class="split style1">
@@ -46,9 +59,9 @@
 												<textarea name="message" id="message" rows="5"></textarea>
 											</div>
 										</div><br>
-										<ul class="actions">
-											<a href="" class="submit">Send Message</a>
-										</ul>
+										<div class="actions">
+											<button type="submit" class="submit-btn">Send Message</button>
+										</div>
 									</form>
 								</section>
 							
