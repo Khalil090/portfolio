@@ -11,6 +11,63 @@ html, body {
   padding: 0%;
 }
 
+/* Animated Wave Header Styles */
+.header-waves {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15vh;
+    min-height: 100px;
+    max-height: 200px;
+    z-index: -1; /* Behind hero content */
+    overflow: hidden;
+    transform: rotate(180deg);
+}
+
+.waves {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+
+.parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+    fill: rgba(var(--accent-color-rgb, 77, 77, 249), 0.7);
+}
+
+.parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+    fill: rgba(var(--accent-color-rgb, 77, 77, 249), 0.5);
+}
+
+.parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+    fill: rgba(var(--accent-color-rgb, 77, 77, 249), 0.3);
+}
+
+.parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+    fill: rgb(var(--accent-color-rgb, 77, 77, 249));
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px,0,0);
+    }
+    100% { 
+        transform: translate3d(85px,0,0);
+    }
+}
+
 /* General Styles */
 
 /* Burger Menu Styles */
@@ -171,6 +228,7 @@ body[data-theme="dark"] {
   --bg-color: #1e1f29;
   --text-color: #ffffff;
   --accent-color: #4d4df9;
+  --accent-color-rgb: 77, 77, 249;
   --theme-shadow: rgba(77, 77, 249, 0.2);
   --menu-bg: linear-gradient(135deg, #3a3b45 0%, #2f303a 100%);
   --menu-text: #ffffff;
@@ -180,6 +238,7 @@ body[data-theme="teal"] {
   --bg-color: #115e59;
   --text-color: #ffffff;
   --accent-color: #2dd4bf;
+  --accent-color-rgb: 45, 212, 191;
   --theme-shadow: rgba(45, 212, 191, 0.2);
   --menu-bg: linear-gradient(135deg, #0f8f8a 0%, #0c6a66 100%);
   --menu-text: #ffffff;
@@ -189,6 +248,7 @@ body[data-theme="purple"] {
   --bg-color: #2D1B69;
   --text-color: #ffffff;
   --accent-color: #9747FF;
+  --accent-color-rgb: 151, 71, 255;
   --theme-shadow: rgba(151, 71, 255, 0.2);
   --menu-bg: linear-gradient(135deg, #4a378b 0%, #35276b 100%);
   --menu-text: #ffffff;
@@ -198,6 +258,7 @@ body[data-theme="light"] {
   --bg-color: #FAF3E3;
   --text-color: #e6e6e9;
   --accent-color: #4d4df9;
+  --accent-color-rgb: 77, 77, 249;
   --theme-shadow: rgba(77, 77, 249, 0.1);
   --menu-bg: linear-gradient(135deg, #faf6f0 0%, #f0e8d8 100%);
   --menu-text: #1e1f29;
@@ -708,13 +769,19 @@ P {
 }
 
 .project-card img {
-  filter: grayscale(100%) brightness(50%);
+  /* Default: black & white */
+  filter: grayscale(100%) brightness(90%);
   width: 100%;
   height: 100%;
   object-fit: cover;
   border: 2px solid #ddd;
   border-radius: 15px;
-  transition: all 0.8s ease-in-out;
+  transition: filter 0.35s ease, transform 0.35s ease;
+}
+
+.project-card.color img {
+  /* Color state when toggle ON */
+  filter: none;
 }
 
 .project-card a::before {
@@ -1066,8 +1133,61 @@ P {
 }
 
 .project-card a:hover img {
-  filter: grayscale(0%) brightness(90%);
+  filter: brightness(100%);
   transform: scale(1.1);
+}
+
+/* Grayscale Toggle Switch */
+.filter-toggle-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--accent-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
 }
 
 @keyframes typing {
