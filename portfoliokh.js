@@ -28,17 +28,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Close menu when clicking a link
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            burgerMenu.classList.remove('active');
-            sideNav.classList.remove('active');
+    // Grayscale Toggle Functionality
+    const grayscaleToggles = document.querySelectorAll('.grayscale-toggle');
+    grayscaleToggles.forEach(toggle => {
+        const projectCard = toggle.closest('.project-card');
+        // Initialize based on checkbox state: checked -> color, unchecked -> grayscale
+        if (toggle.checked) {
+            projectCard.classList.add('color');
+        } else {
+            projectCard.classList.remove('color');
+        }
+
+        // Listen for changes
+        toggle.addEventListener('change', function() {
+            if (this.checked) {
+                projectCard.classList.add('color');
+            } else {
+                projectCard.classList.remove('color');
+            }
         });
     });
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    // Theme Switcher
+// Theme Switcher Functionality
+document.addEventListener('DOMContentLoaded', () => {
     const themeBtns = document.querySelectorAll('.theme-btn');
     const body = document.body;
 
