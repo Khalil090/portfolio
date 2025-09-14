@@ -1431,6 +1431,7 @@ input:checked + .slider:before {
 .main-footer {
     background: linear-gradient(180deg, #1e1f29 0%, #15161b 100%);
     margin-top: 40px;
+      border-radius: 15px;
     padding: 32px 20px;
     border-top: 1px solid rgba(77,249,211,0.08);
 }
